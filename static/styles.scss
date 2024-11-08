@@ -1,36 +1,99 @@
-/* styles.css */
-
-$menu_green: #70bd8a;
-$menu_hover: yellow;
-$btn_green: #3f9464;
-
-$grey: #91a6bc;
-$blue: #3169a4;
-$font_grey: #495057;
+// Global Variables
+$primary-color: #52b280; // Green from header in the sketch
+$secondary-color: #ffffff;
+$hover-color: #e0d71f; // LHovering over menu items
+$font-color: #3b3a3a;
+$font-family: 'Arial', sans-serif;
 
 body {
-    background-color: $menu_green; 
-    font-family: 'Arial', sans-serif;
+    font-family: $font-family;
+    color: $font-color;
+    background-color: $secondary-color;
+    margin: 0;
 }
 
+// Header
 h1 {
-    color: #343a40; 
+    font-size: 2.5rem;
+    color: $font-color;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.container {
-    margin-top: 50px;
+// Navbar Styling
+.navbar-color {
+    background-color: $primary-color;
+    .nav-link {
+        color: $secondary-color !important;
+        font-weight: bold;
+        margin-right: 15px;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: $hover-color;
+        }
+    }
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+    font-weight: bold;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+// Main Container
+main {
     padding: 20px;
+
+    // Input Section
+    .input-container {
+        margin-bottom: 20px;
+        textarea {
+            border-radius: 8px;
+            border: 1px solid $hover-color;
+            padding: 10px;
+            resize: vertical;
+            width: 100%;
+        }
+    }
+
+    // File Upload
+    .file-upload {
+        margin-bottom: 20px;
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid $accent-color;
+            border-radius: 8px;
+        }
+    }
+
+    // Options Dropdown Section
+    .options {
+        background-color: $accent-color;
+        padding: 20px;
+        border-radius: 8px;
+        display: inline-block;
+        margin-bottom: 20px;
+
+        .dropdown {
+            margin-right: 15px;
+        }
+
+        button.btn-secondary {
+            background-color: $primary-color;
+            border: none;
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+    }
+       
 }
-
-.menu {
-    background-color: $menu_green;
-    border-color: $grey;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.menu:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-
