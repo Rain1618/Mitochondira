@@ -1,0 +1,36 @@
+/* styles.css */
+
+$menu_green: #70bd8a;
+$menu_hover: yellow;
+$btn_green: #3f9464;
+
+$grey: #91a6bc;
+$blue: #3169a4;
+$font_grey: #495057;
+
+body {
+    background-color: $menu_green; 
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #343a40; 
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.menu {
+    background-color: $menu_green;
+    border-color: $grey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
