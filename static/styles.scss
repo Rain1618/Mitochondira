@@ -1,7 +1,11 @@
 // Global Variables
-$primary-color: #52b280; // Green from header in the sketch
-$secondary-color: #ffffff;
-$hover-color: #e0d71f; // LHovering over menu items
+$primary-color: #73c59b;    // Green from header in the sketch
+$secondary-color: #ffffff;  //Darker green for submit button
+$background-color: #f5f5f5; // White for the main background
+$textbox-color: #f5f5f5;    // Light grey for the textboxes
+$accent-color: #e0d71f;     // Page that we are on 
+$hover-color: #c42020;       
+$dark-blue: #092e59;        // Dark blue for the options buttons
 $font-color: #3b3a3a;
 $font-family: 'Arial', sans-serif;
 
@@ -22,19 +26,36 @@ h1 {
 }
 
 // Navbar Styling
+.container-fluid{
+    background-color: $primary-color;  //Background color of the navbar
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
 .navbar-color {
     background-color: $primary-color;
-    .nav-link {
-        color: $secondary-color !important;
+    .active {
+        text-decoration-color: $accent-color;
         font-weight: bold;
-        margin-right: 15px;
-
+    }
+    .nav-link {
+        color: $background-color; // Color of the text in the navbar
         &:hover {
-            text-decoration: underline;
-            text-decoration-color: $hover-color;
+            color: lighten($accent-color, 10%); 
         }
     }
 }
+
+//Title Styling
+// .mt-5 { //Surrounds entire "main" section of the page, including title up to after the submit button
+//     background-color: $background-color;
+//     padding: 20px;
+//     border-radius: 10px;
+//     margin-bottom: 20px;
+// }
+
+// Button Styling
 
 .btn-primary {
     background-color: $primary-color;
@@ -70,14 +91,14 @@ main {
         margin-bottom: 20px;
         input[type="file"] {
             padding: 10px;
-            border: 1px solid $accent-color;
+            border: 1px solid $hover-color;
             border-radius: 8px;
         }
     }
 
     // Options Dropdown Section
     .options {
-        background-color: $accent-color;
+        background-color: $hover-color;
         padding: 20px;
         border-radius: 8px;
         display: inline-block;
