@@ -11,11 +11,11 @@ def about():
     return render_template('about.html')
 
 @app.route('/search')
-def about():
+def search():
     return render_template('search.html')
 
 @app.route('/help')
-def about():
+def help():
     return render_template('help.html')
 
 if __name__ == "__main__":
