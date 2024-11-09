@@ -1,12 +1,12 @@
 // Global Variables
-$primary-color: #73c59b;    // Green from header in the sketch
+$primary-color: #86BAA1;    // Green from header in the sketch
 $secondary-color: #ffffff;  //Darker green for submit button
 $background-color: #f5f5f5; // White for the main background
 $textbox-color: #f5f5f5;    // Light grey for the textboxes
-$accent-color: #e0d71f;     // Page that we are on 
+$accent-color: #FFCF56;     // Page that we are on 
 $hover-color: #c42020;       
-$dark-blue: #092e59;        // Dark blue for the options buttons
-$font-color: #3b3a3a;
+$dark-blue: #2D4F8A;        // Dark blue for the options buttons
+$font-color: #000000;
 $font-family: 'Arial', sans-serif;
 
 body {
@@ -68,6 +68,11 @@ h1 {
     &:hover {
         background-color: darken($primary-color, 10%);
     }
+}
+
+//Submit button
+.btn-success{
+    background: #3AB795;
 }
 
 // Main Container
