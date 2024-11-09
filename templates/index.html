@@ -38,41 +38,47 @@
             <!-- Input section -->
             <section class="mt-4">
                 <h2>Input</h2>
-                <p>Paste your sequence here</p>
-                <textarea class="form-control" name="sequence_input" id="sequence_input" rows="5"></textarea>
-                <button class="btn btn-primary">See example</button>
-
-                <p class="mt-3">or upload a file</p>
-                <input type="file" class="form-control-file" accept=".gif,.txt,.pdf" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Paste your sequence here</p>
+                        <button class="btn btn-primary">See example</button>
+                        <!-- add a bunch of blank space here -->
+                        <p class="mt-3">or upload a file</p>
+                    </div>
+                    <div class="col-md-6">
+                        <textarea class="form-control" name="sequence_input" id="sequence_input" rows="5"></textarea>
+                        <input type="file" class="form-control-file" accept=".gif,.txt,.pdf" />
+                    </div>
             </section>
 
             <!-- Options section -->
             <section class="mt-5">
                 <h2>Options</h2>
-                <p>Advanced options or smth idk</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="sortOptions" class="form-label">Sort by</label>
-                        <select class="form-select" id="sortOptions">
-                            <option value="ascending">Ascending</option>
-                            <option value="descending">Descending</option>
-                        </select>
+                        <p>Advanced options or smth idk</p>
                     </div>
+
                     <div class="col-md-6">
-                        <label for="filterOptions" class="form-label">Filter by</label>
-                        <select class="form-select" id="filterOptions">
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                        </select>
+                        <div class="container-xl"> <!-- TODO: make this grey -->
+                            <label for="sortOptions" class="form-label">Sort by</label>
+                            <select class="form-select" id="sortOptions">
+                                <option value="ascending">Ascending</option>
+                                <option value="descending">Descending</option>
+                            </select>
+
+                            <label for="filterOptions" class="form-label">Filter by</label>
+                            <select class="form-select" id="filterOptions">
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                            </select>
+
+                            <button type="button" class="btn btn-primary"> See example </button>
+                            <button type="button" class="btn btn-primary"> See example </button>
+
+                        </div>
                     </div>
                 </div>
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                >
-                    See example
-                </button>
-                
                 
             </section>
 
