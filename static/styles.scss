@@ -2,12 +2,12 @@
 $primary-color: #86BAA1;    // Green from header in the sketch
 $secondary-color: #ffffff;  //Darker green for submit button
 $background-color: #f5f5f5; // White for the main background
-$textbox-color: #f5f5f5;    // Light grey for the textboxes
+$textbox-color: #EFEFEF;    // Light grey for the textboxes
 $accent-color: #FFCF56;     // Page that we are on 
 $hover-color: #c42020;       
 $dark-blue: #2D4F8A;        // Dark blue for the options buttons
 $font-color: #000000;
-$font-family: 'Arial', sans-serif;
+$font-family: 'Source Code Pro', monospace;
 
 body {
     font-family: $font-family;
@@ -18,15 +18,59 @@ body {
 
 // Header
 h1 {
-    font-size: 2.5rem;
-    color: $font-color;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    font-family: $font-family; 
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 62.85px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
+//Text styling
+.yap{ //Used for long yapping text
+    font-family: Space Mono;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 29.62px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+//TODO: organize this better lol and have a consistent system for fonts and text styling
+
+.t{
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.mono {
+    font-family: monospace; 
+    border-radius: 8px;
+    // font-family: Space Mono;
+    // font-size: 20px;
+    // font-weight: 700;
+    // line-height: 29.62px;
+    // text-align: center;
+    // text-underline-position: from-font;
+    // text-decoration-skip-ink: none;
+}
+
+.mono-1 {
+    font-family: monospace; 
+    border-radius: 8px;
+    font-size: 1.25rem;
+}
+
+.mono-big{
+    font-family: monospace; 
+    border-radius: 10px;
+}
+
+
 // Navbar Styling
-.container-fluid{
+.container-fluid{ 
     background-color: $primary-color;  //Background color of the navbar
     padding: 20px 0;
     display: flex;
@@ -38,6 +82,7 @@ h1 {
     .active {
         text-decoration-color: $accent-color;
         font-weight: bold;
+        color: $accent-color;
     }
     .nav-link {
         color: $background-color; // Color of the text in the navbar
@@ -45,15 +90,12 @@ h1 {
             color: lighten($accent-color, 10%); 
         }
     }
-}
 
-//Title Styling
-// .mt-5 { //Surrounds entire "main" section of the page, including title up to after the submit button
-//     background-color: $background-color;
-//     padding: 20px;
-//     border-radius: 10px;
-//     margin-bottom: 20px;
-// }
+    .home-link {
+        color: $accent-color !important;
+        font-weight: bold;
+    }
+}
 
 // Button Styling
 
@@ -91,6 +133,11 @@ main {
         }
     }
 
+    //Textbox
+    .form-control {
+        background-color: $textbox-color;
+    }
+
     // File Upload
     .file-upload {
         margin-bottom: 20px;
@@ -99,27 +146,5 @@ main {
             border: 1px solid $hover-color;
             border-radius: 8px;
         }
-    }
-
-    // Options Dropdown Section
-    .options {
-        background-color: $hover-color;
-        padding: 20px;
-        border-radius: 8px;
-        display: inline-block;
-        margin-bottom: 20px;
-
-        .dropdown {
-            margin-right: 15px;
-        }
-
-        button.btn-secondary {
-            background-color: $primary-color;
-            border: none;
-            &:hover {
-                background-color: $hover-color;
-            }
-        }
-    }
-       
+    }    
 }

@@ -5,6 +5,12 @@
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         
         <!-- Bootstrap CSS v5.3.2 -->
         <link
@@ -13,7 +19,9 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="static/styles.css" />
+
+        <link rel="stylesheet" href="..\static\styles.css"/>
+        <script src="../static/script.js" defer></script>
         
     </head>
 
@@ -22,74 +30,69 @@
             <nav class="navbar navbar-expand navbar-color bg-light">
                 <div class="container-fluid">
                     <!-- <a class="navbar-brand" href="#">Mitochondira</a> -->
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="/">HOME</a>
-                        <a class="nav-item nav-link" href="/about">ABOUT</a> <!-- for about.html file, add active class -->
-                        <a class="nav-item nav-link" href="/search">SEARCH</a>
-                        <a class="nav-item nav-link" href="/help">HELP</a>
+                    <div class="navbar-nav mx-auto text-center">
+                        <a class="nav-item nav-link active home-link mono-1 me-4" href="/">HOME</a>
+                        <a class="nav-item nav-link mono-1 me-4" href="/about">ABOUT</a> <!-- for about.html file, add active class -->
+                        <a class="nav-item nav-link mono-1 me-4" href="/predict">PREDICT</a>
+                        <a class="nav-item nav-link mono-1 me-4" href="/help">HELP</a>
                     </div>
+                    <img src="..\static\uploads\small_logo.png" alt="Small Logo" height="40">
+
                 </div>
             </nav>
         </header>
 
-        <main class="container mt-5">
-            <h1 class="text-center">Mitochondira</h1>
+        <main class="container mt-2">
+            <!-- LOGO-->
+            <div class="text-center mb-4">
+                <img src="..\static\uploads\large_logo.png" alt="Logo" class="img-fluid" style="max-height: 100px;">
+            </div>
+
+            <h1 class="text-center t">Glycosylation Site Prediction</h1>
 
             <!-- Input section -->
             <section class="mt-4">
-                <h2>Input</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p>Paste your sequence here</p>
-                        <button class="btn btn-primary">See example</button>
-                        <!-- add a bunch of blank space here -->
-                        <p class="mt-3">or upload a file</p>
+                <!-- <div class="row">
+                    <div class="col-md-4 text-end">
+                        <h2 class="mono-big text-end">INPUT</h2>
                     </div>
-                    <div class="col-md-8">
-                        <textarea class="form-control" name="sequence_input" id="sequence_input" rows="5"></textarea>
-                        <input type="file" class="form-control-file" accept=".gif,.txt,.pdf" />
-                    </div>
-            </section>
-
-            <!-- Options section -->
-            <section class="mt-5">
-                <h2>Options</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p>Advanced options or smth idk</p>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div class="container-xl"> <!-- TODO: make this grey -->
-                            <label for="sortOptions" class="form-label">Sort by</label>
-                            <select class="form-select" id="sortOptions">
-                                <option value="ascending">Ascending</option>
-                                <option value="descending">Descending</option>
-                            </select>
-
-                            <label for="filterOptions" class="form-label">Filter by</label>
-                            <select class="form-select" id="filterOptions">
-                                <option value="option1">Option 1</option>
-                                <option value="option2">Option 2</option>
-                            </select>
-
-                            <button type="button" class="btn btn-primary"> See example </button>
-                            <button type="button" class="btn btn-primary"> See example </button>
-
-                        </div>
-                    </div>
-                </div>
+                </div> -->
                 
+                <div class="row">
+                    <div class="col-md-4 text-end">
+                        <p class="mono">Paste your sequence here</p>
+                        <button class="btn btn-primary mono mt-8">See example</button>
+                        <!-- add a bunch of blank space here -->
+                        <p class="mt-3 mono">or upload a PDB file</p>
+                    </div>
+                    <div class="col-md-8">
+                        <textarea class="form-control mt-3" name="sequence_input" id="sequence_input" rows="5"></textarea>
+                        <input type="file" class="form-control-file mono mt-4" id="fileInput" accept=".pdb" />
+                    </div>
             </section>
 
-            <!-- Submit button -->
+            <!-- Predict button -->
             <div class="mt-4 text-center">
-                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                <button 
+                id="predictButton"
+                type="submit" 
+                class="btn btn-success btn-lg mono" 
+                onclick="uploadAndPredict()"> <!-- TODO: undefined???-->
+                    Predict
+                </button>
+
+                <div id="statusMessage" class="mono mt-3"></div>
+                <div id="graphResult"></div> 
+                <div id="predictionResult" class="mono"></div>
+                <div id="downloadBtn" class="mono"></div>
+                <!-- Button to download the prediction result as a text file -->
+                <button id="downloadTextBtn" class="btn btn-secondary mt-3">Download</button>
+
             </div>
         </main>
 
-        <footer class="text-center mt-5">
-            <p>&copy; 2024 Mitochondira</p>
+        <footer class="text-center mt-5 mono">
+            <p>&copy; 2024 KLIK Built for BioHack</p>
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->
